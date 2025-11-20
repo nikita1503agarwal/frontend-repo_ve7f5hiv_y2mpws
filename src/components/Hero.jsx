@@ -1,12 +1,13 @@
 import Spline from '@splinetool/react-spline'
 import { motion, AnimatePresence } from 'framer-motion'
+import NoiseButton from './NoiseButton'
 
 export default function Hero() {
   return (
     <section id="home" className="relative min-h-[88vh] flex items-center overflow-hidden">
       <div className="absolute inset-0">
         <Spline scene="https://prod.spline.design/VJLoxp84lCdVfdZu/scene.splinecode" style={{ width: '100%', height: '100%' }} />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0b1020]/60 via-[#0b1020]/50 to-[#0b1020] pointer-events-none"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0b1020]/60 via-[#0b1020]/50 to-[#0b1020] pointer-events-none" />
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
@@ -38,18 +39,12 @@ export default function Hero() {
               transition={{ delay: 0.3, duration: 0.6 }}
               className="mt-8 flex flex-wrap gap-3"
             >
-              <a
-                href="/resume.pdf"
-                className="px-5 py-3 rounded-full bg-emerald-500/20 text-emerald-200 border border-emerald-400/20 hover:bg-emerald-500/30 transition-colors"
-              >
+              <NoiseButton as="a" href="/resume.pdf" className="">
                 Download Resume
-              </a>
-              <a
-                href="#contact"
-                className="px-5 py-3 rounded-full bg-white/10 text-white border border-white/20 hover:bg-white/20 transition-colors"
-              >
+              </NoiseButton>
+              <NoiseButton as="a" href="#contact" className="bg-emerald-500/20 border-emerald-400/20">
                 Hire Me
-              </a>
+              </NoiseButton>
             </motion.div>
 
             <motion.ul
@@ -71,7 +66,7 @@ export default function Hero() {
               ))}
             </motion.ul>
           </div>
-          <div className="lg:col-span-5"></div>
+          <div className="lg:col-span-5" />
         </div>
       </div>
     </section>

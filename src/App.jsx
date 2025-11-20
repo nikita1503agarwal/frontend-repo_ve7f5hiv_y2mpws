@@ -3,19 +3,26 @@ import Hero from './components/Hero'
 import Section from './components/Section'
 import Projects from './components/Projects'
 import Contact from './components/Contact'
+import BackgroundFX from './components/BackgroundFX'
+import ScrollMarquee from './components/ScrollMarquee'
 
 function App() {
   return (
     <div className="min-h-screen bg-[#0b1020] text-white">
+      <BackgroundFX />
       <Navbar />
 
       <main>
         <Hero />
 
+        <div className="mt-2">
+          <ScrollMarquee />
+        </div>
+
         <Section id="about" title="About" subtitle="Concise personal bio, values, education, location">
           <div className="grid md:grid-cols-3 gap-6">
             <div className="md:col-span-1">
-              <div className="p-6 rounded-2xl bg-[#0f172a] border border-white/10 shadow-xl/10">
+              <div className="p-6 rounded-2xl bg-[#0f172a]/80 border border-white/10 shadow-xl/10 backdrop-blur">
                 <img src="https://avatars.githubusercontent.com/u/000000?v=4" alt="Portrait of Bhuvaneshwaran" className="w-28 h-28 rounded-2xl object-cover" />
                 <h3 className="mt-4 text-xl font-semibold">Bhuvaneshwaran C</h3>
                 <p className="text-slate-300">Aspiring Software Developer</p>
@@ -40,7 +47,7 @@ function App() {
               { name: 'Backend', items: ['FastAPI', 'Node.js', 'MongoDB'] },
               { name: 'Cloud & Tools', items: ['Git', 'Vercel/Netlify', 'Docker'] },
             ].map(group => (
-              <div key={group.name} className="p-6 rounded-2xl bg-[#0f172a] border border-white/10">
+              <div key={group.name} className="p-6 rounded-2xl bg-[#0f172a]/80 border border-white/10 backdrop-blur">
                 <h3 className="text-lg font-semibold">{group.name}</h3>
                 <div className="mt-3 flex flex-wrap gap-2">
                   {group.items.map(i => (
